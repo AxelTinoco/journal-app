@@ -10,11 +10,11 @@ export const NoteScreen = () => {
                 <input 
                 type="text" 
                 placeholder="Awesome title here!"
-                className="text-4xl"
+                className="text-4xl p-2"
                 autoComplete="off"
                 />
 
-                <textarea name="" id="" className="resize-none flex-auto" placeholder="Type here!...." ></textarea>
+                <textarea name="" id="" className="resize-none flex-auto p-4" placeholder="Type here!...." ></textarea>
                 
             </div>
 

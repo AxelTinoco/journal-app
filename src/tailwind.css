@@ -9,3 +9,7 @@
   .animated-things{
     transition: all ease-in 700ms
   }
+
+  ::-webkit-scrollbar {
+    display: none;
+}

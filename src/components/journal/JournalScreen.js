@@ -5,10 +5,10 @@ import { Sidebar } from "./Sidebar"
 export const JournalScreen = () => {
     return (
 
-        <div className="flex">
+        <div className="flex w-screen">
         <Sidebar />
 
-        <main className="flex w-[80%]">
+        <main className="flex md:w-[70%] sm:w-1/2 w-1/2" >
             {/* <NothingSelected /> */}
             <NoteScreen/>
         </main>

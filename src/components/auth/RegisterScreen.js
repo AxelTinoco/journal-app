@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { IoIosArrowDown, IoIosArrowForward, IoIosAddCircleOutline } from 'react-icons/io'
-import { FormState } from '../FormState'
+    import { FormRegisternState } from '../FormRigisterState';
 
 export const RegisterScreen = () => {
 
@@ -49,7 +49,7 @@ export const RegisterScreen = () => {
                 </div>
             </div>
 
-            <FormState changeClass={changeClass} />
+            <FormRegisternState changeClass={changeClass} />
 
 
 

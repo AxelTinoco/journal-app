@@ -4,7 +4,7 @@ import { JournalEntries } from './JournalEntries'
 
 export const Sidebar = () => {
     return (
-        <aside className="h-screen bg-[#02b3c5] w-[25%] p-4 overflow-hidden">
+        <aside className="h-screen bg-[#02b3c5]  p-4 overflow-hidden">
             
             <div className="flex flex-row justify-between text-white">
             <div className="p-2 flex items-center space-x-2">
