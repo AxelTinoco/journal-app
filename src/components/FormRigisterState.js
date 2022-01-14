@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useForm } from '../hooks/useForm'
 import { uiReducer } from '../reducers/uiReducer'
 import { uiRemoveError, uiSetError } from '../actions/ui'
-import { startWithEmailPasswordName } from '../actions/auth'
+import { startGoogleLogin, startWithEmailPasswordName } from '../actions/auth'
 
 export const FormRegisternState = ({changeClass}) => {
 
@@ -20,10 +20,10 @@ export const FormRegisternState = ({changeClass}) => {
 
 
     const [formValues,handleInputChange] = useForm({
-        name: 'Axel',
-        email: 'axeltm@gmail.com',
-        password: 'axel123',
-        password2:'axel123'
+        name: '',
+        email: '',
+        password: '',
+        password2:''
 
     })
 
@@ -49,6 +49,13 @@ export const FormRegisternState = ({changeClass}) => {
       }
 
     }
+
+    const handleRegistertGoogle = () => {
+        
+        dispatch(startGoogleLogin())
+
+
+    }
     
     const isFormValid = () => {
             //TODO
@@ -70,7 +77,7 @@ export const FormRegisternState = ({changeClass}) => {
     return (
 
         <form 
-        className = {`hidden md:flex col-start-8 col-end-12 row-start-2 row-end-6 rounded-3xl p-4 justify-center flex-col items-center space-y-10 border-b shadow-xl`}
+        className = {`hidden md:flex col-start-8 col-end-12 row-start-2 row-end-6 rounded-3xl p-4 justify-center flex-col items-center space-y-6 border-b shadow-xl`}
         onSubmit={handleSubmitRegister}
         >
             <h2 className='text-4xl ' >Register</h2>
@@ -144,7 +151,7 @@ export const FormRegisternState = ({changeClass}) => {
 
            </div>
 
-           <div className='w-1/2 relative'>
+           <div className='w-1/2 relative '>
            <button 
             type='submit'
             onSubmit={handleSubmitRegister}
@@ -157,7 +164,7 @@ export const FormRegisternState = ({changeClass}) => {
            <div className='flex justify-around flex-row border-t p-4 w-1/3'>
 
                 <button className='mx-3'>
-                    <FcGoogle className='text-3xl'/>
+                    <FcGoogle className='text-3xl' onClick={handleRegistertGoogle}/>
                 </button>
 
                 or

@@ -1,16 +1,28 @@
-// import { NothingSelected } from "./NothingSelected"
+import { NothingSelected } from "./NothingSelected"
+import { useSelector } from "react-redux"
 import { NoteScreen } from "../notes/NoteScreen"
 import { Sidebar } from "./Sidebar"
 
 export const JournalScreen = () => {
+
+    const {active} = useSelector(state => state.notes)
+    console.log(active)
+
     return (
 
-        <div className="flex w-screen">
+        <div className="flex w-screen h-screen relative">
         <Sidebar />
 
-        <main className="flex md:w-[70%] sm:w-1/2 w-1/2" >
-            {/* <NothingSelected /> */}
-            <NoteScreen/>
+        <main className="flex w-full" >
+            {
+                (active)
+                ?
+                <NoteScreen/>
+                :
+                <NothingSelected /> 
+
+
+            }
         </main>
         
         </div>

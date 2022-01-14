@@ -6,11 +6,7 @@ export const RegisterScreen = () => {
 
     const [changeClass] = useState(false);
 
-    const handleShowRegisterForm = () => {
-
-
-
-    }
+   
 
     return (
         <div className="grid grid-cols-12 grid-rows-6 h-screen md:bg-pattern bg-[#02b3c5]">
@@ -43,7 +39,7 @@ export const RegisterScreen = () => {
                 <div className="w-1/2 flex justify-center items-center text-xl">
                     <button 
                         className='flex items-center'>New <IoIosAddCircleOutline className='ml-2' 
-                        onClick={ handleShowRegisterForm }
+                       
                         />
                     </button>
                 </div>

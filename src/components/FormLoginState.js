@@ -5,6 +5,7 @@ import {BsGithub} from 'react-icons/bs'
 import { useForm } from '../hooks/useForm'
 import { useDispatch } from 'react-redux'
 import { startGoogleLogin, startLoginEmailPasword } from '../actions/auth'
+import { useSelector } from 'react-redux'
 // import { login } from '../actions/auth'
 
 export const FormLoginState = ({showLogin}) => {
@@ -13,7 +14,7 @@ export const FormLoginState = ({showLogin}) => {
     const [state, setState] = useState('password')
 
     const dispatch = useDispatch()
-    
+    const {loading} = useSelector(state => state.ui)
 
     const [formValues,handleInputChange] = useForm({
         email: '',
@@ -48,6 +49,7 @@ export const FormLoginState = ({showLogin}) => {
 
     }
 
+    console.log(loading)
    
 
     return (
@@ -98,7 +100,8 @@ export const FormLoginState = ({showLogin}) => {
             <button 
             type='submit'
             onSubmit={handleSubmit}
-            className='bg-primary p-2 rounded-2xl my-4 w-full text-white shadow-xl'
+            className={loading ? 'bg-primary p-2 rounded-2xl my-4 w-full text-white shadow-xl cursor-not-allowed disabled:opacity-50' : 'bg-primary p-2 rounded-2xl my-4 w-full text-white shadow-xl' }
+            disabled={loading}
             >
                 Login
             </button>
