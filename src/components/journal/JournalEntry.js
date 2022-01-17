@@ -1,17 +1,40 @@
 import task from '../../assets/task.jpg'
+import moment from 'moment';
+import { useDispatch } from 'react-redux';
+import { activeNote } from '../../actions/notes';
 
-export const JournalEntry = () => {
+
+export const JournalEntry = ({id,body,date,title,url}) => {
+
+    const noteDate = moment(date);
+    const dispatch = useDispatch()
+    
+    const handleEntryActive = () => {
+         
+        dispatch(activeNote(id,{body,title,url,date}))
+
+    }
+
+
     return (
-        <div className="flex bg-white p-2 my-3 rounded-lg flex-row">
-            <div className="w-[30%] flex p-2">
-                <img src={task} alt="" className='flex' />
+        <div 
+        className="flex bg-white my-3 rounded-lg md:flex-row flex-col relative w-full"
+        onClick={handleEntryActive}
+        >
+            {
+                url && 
+                (<div className="flex w-full md:w-[30%] ">
+                <img src={task} alt="" className='flex rounded-l-lg object-cover' />
+                 </div>)
+            }
+            <div className="md:w-[40%] flex p-1  w-full text-xs">
+                <p>{title}</p>
+                <p>{body}</p>
             </div>
-            <div className="w-[40%] flex p-2">
-                <p>Lorem, ipsum dolor sit amet consectetur</p>
-            </div>
-            <div className="w-[30%] flex flex-col items-center justify-center">
-                <p className="font-semibold text-xl">Monday</p>
-                <p className="font-light">18</p>
+            <div className='flex flex-col w-[40%] md:relative absolute 
+            right-0 items-center justify-center md:bg-white bg-black text-white md:text-black bg-opacity-30'>
+                <p className='text-xl font-bold'>{noteDate.format('dddd')}</p>
+                <p className='font-light'>{noteDate.format('Do')}</p>
             </div>
 
         </div>

@@ -3,6 +3,7 @@ import { BsCalendarPlus } from 'react-icons/bs'
 import { JournalEntries } from './JournalEntries'
 import { useDispatch, useSelector } from 'react-redux'
 import { startLogout } from '../../actions/auth'
+import { startNewNote } from '../../actions/notes'
 
 export const Sidebar = () => {
 
@@ -17,6 +18,12 @@ export const Sidebar = () => {
 
     }
 
+    
+    const handleNewNote = () => {
+
+        dispatch(startNewNote())
+
+    }
 
 
     return (
@@ -35,7 +42,9 @@ export const Sidebar = () => {
             </div>
 
             <div className='flex w-full justify-center flex-col items-center text-white mt-4'>
-                <div className='group items-center flex flex-col p-0 cursor-pointer space-y-4'>
+                <div 
+                onClick={handleNewNote}
+                className='group items-center flex flex-col p-0 cursor-pointer space-y-4'>
                     <BsCalendarPlus className='flex text-5xl group-hover:text-gray-300 transition-all' />
                     <p className=' group-hover:text-gray-300 '>Create a new entry</p>
                 </div>

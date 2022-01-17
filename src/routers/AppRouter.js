@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { Routes, Route} from "react-router-dom";
 import { login } from "../actions/auth";
+import { startLoadingNotes } from "../actions/notes";
 import { JournalScreen } from "../components/journal/JournalScreen";
 import { LoadingScreen } from "../components/Loading/LoadingScreen";
 import { AuthRouter } from "./AuthRouter";
@@ -19,10 +20,13 @@ export const AppRouter = () => {
     useEffect(() => {
 
         const auth = getAuth();
-        onAuthStateChanged(auth, user => {
+        onAuthStateChanged(auth,async (user) => {
             if (user?.uid) {
                 dispatch(login(user.uid, user.displayName));
                 setIsLoggedIn(true);
+                
+                dispatch(startLoadingNotes(user?.uid))
+
             } else {
                 setIsLoggedIn(false);
             }

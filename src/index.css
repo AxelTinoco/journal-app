@@ -503,6 +503,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   top: 0.75rem;
 }
 
+.right-0 {
+  right: 0px;
+}
+
 .z-50 {
   z-index: 50;
 }
@@ -586,6 +590,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 82%;
 }
 
+.h-1\/3 {
+  height: 33.333333%;
+}
+
 .h-full {
   height: 100%;
 }
@@ -606,20 +614,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 100vw;
 }
 
-.w-\[30\%\] {
-  width: 30%;
-}
-
-.w-\[40\%\] {
-  width: 40%;
-}
-
 .w-\[60\%\] {
   width: 60%;
 }
 
 .w-1\/5 {
   width: 20%;
+}
+
+.w-\[40\%\] {
+  width: 40%;
 }
 
 .flex-auto {
@@ -819,6 +823,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-bottom-left-radius: 4rem;
 }
 
+.rounded-l-lg {
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
 .border-b {
   border-bottom-width: 1px;
 }
@@ -856,6 +865,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(2 179 197 / var(--tw-bg-opacity));
 }
 
+.bg-opacity-40 {
+  --tw-bg-opacity: 0.4;
+}
+
+.bg-opacity-20 {
+  --tw-bg-opacity: 0.2;
+}
+
+.bg-opacity-30 {
+  --tw-bg-opacity: 0.3;
+}
+
 .bg-login {
   background-image: url('/src/assets/login.jpg');
 }
@@ -871,6 +892,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .bg-top {
   background-position: top;
+}
+
+.object-cover {
+  object-fit: cover;
 }
 
 .p-4 {
@@ -927,12 +952,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1;
 }
 
-.font-bold {
-  font-weight: 700;
+.text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
-.font-semibold {
-  font-weight: 600;
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.font-bold {
+  font-weight: 700;
 }
 
 .font-light {
@@ -959,6 +990,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .placeholder-transparent::placeholder {
   color: transparent;
+}
+
+.opacity-30 {
+  opacity: 0.3;
 }
 
 .shadow-xl {
@@ -1093,6 +1128,14 @@ body{
 }
 
 @media (min-width: 768px) {
+  .md\:absolute {
+    position: absolute;
+  }
+
+  .md\:relative {
+    position: relative;
+  }
+
   .md\:col-span-6 {
     grid-column: span 6 / span 6;
   }
@@ -1113,6 +1156,18 @@ body{
     width: 50%;
   }
 
+  .md\:w-\[30\%\] {
+    width: 30%;
+  }
+
+  .md\:w-\[40\%\] {
+    width: 40%;
+  }
+
+  .md\:w-1\/3 {
+    width: 33.333333%;
+  }
+
   .md\:flex-row {
     flex-direction: row;
   }
@@ -1129,6 +1184,11 @@ body{
 
   .md\:rounded-bl-none {
     border-bottom-left-radius: 0px;
+  }
+
+  .md\:bg-white {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   }
 
   .md\:bg-pattern {
