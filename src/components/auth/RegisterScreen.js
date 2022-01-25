@@ -1,12 +1,19 @@
 import { useState } from 'react';
 import { IoIosArrowDown, IoIosArrowForward, IoIosAddCircleOutline } from 'react-icons/io'
+import { useNavigate } from 'react-router-dom';
     import { FormRegisternState } from '../FormRigisterState';
 
 export const RegisterScreen = () => {
 
     const [changeClass] = useState(false);
 
-   
+    let navigate = useNavigate()
+    const handleNavigateLoginForm = () => {
+
+        navigate('/auth/login')
+       
+    
+        }
 
     return (
         <div className="grid grid-cols-12 grid-rows-6 h-screen md:bg-pattern bg-[#02b3c5]">
@@ -32,13 +39,15 @@ export const RegisterScreen = () => {
 
             <div className="col-span-12 flex p-4 justify-around text-center md:col-span-6 text-white space-y-2">
 
-                <div className="w-1/2  flex justify-center items-center text-xl">
+                <div className="w-1/2  flex justify-center items-center text-xl md:hidden">
                     Login <IoIosArrowForward className='ml-2' />
                 </div>
 
-                <div className="w-1/2 flex justify-center items-center text-xl">
+                <div className="w-1/2 flex justify-end items-center text-xl">
                     <button 
-                        className='flex items-center'>New <IoIosAddCircleOutline className='ml-2' 
+                        className='flex items-center'
+                        onClick={handleNavigateLoginForm}
+                        >Login<IoIosAddCircleOutline className='ml-2' 
                        
                         />
                     </button>

@@ -1,4 +1,3 @@
-import task from '../../assets/task.jpg'
 import moment from 'moment';
 import { useDispatch } from 'react-redux';
 import { activeNote } from '../../actions/notes';
@@ -24,11 +23,11 @@ export const JournalEntry = ({id,body,date,title,url}) => {
             {
                 url && 
                 (<div className="flex w-full md:w-[30%] ">
-                <img src={task} alt="" className='flex rounded-l-lg object-cover' />
+                <img src={url} alt="" className='flex rounded-l-lg object-cover' />
                  </div>)
             }
-            <div className="md:w-[40%] flex p-1  w-full text-xs">
-                <p>{title}</p>
+            <div className="md:w-[40%] flex p-1  w-full text-xs flex-col">
+                <p className='font-bold'>{title}</p>
                 <p>{body}</p>
             </div>
             <div className='flex flex-col w-[40%] md:relative absolute 

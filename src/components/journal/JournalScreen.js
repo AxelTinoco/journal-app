@@ -6,7 +6,8 @@ import { Sidebar } from "./Sidebar"
 export const JournalScreen = () => {
 
     const {active} = useSelector(state => state.notes)
-    console.log(active)
+  
+    
 
     return (
 

@@ -1,17 +1,20 @@
 import { useState } from 'react';
 import { IoIosArrowDown, IoIosArrowForward, IoIosAddCircleOutline } from 'react-icons/io'
+import { useNavigate } from 'react-router-dom';
 import { FormLoginState } from '../FormLoginState';
 
 export const LoginScreen = () => {
 
+    let navigate = useNavigate()
    
     const [showLogin, setShowLogin] = useState(false)
   
 
 
-    const handleShowRegisterForm = () => {
+    const handleNavigateRegisterForm = () => {
 
-
+    navigate('/auth/register')
+    console.log('click')
 
     }
 
@@ -45,7 +48,7 @@ export const LoginScreen = () => {
 
             <div className="col-span-12 flex p-4 justify-around text-center md:col-span-6 text-white space-y-2">
 
-                <div className="w-1/2  flex justify-center items-center text-xl">
+                <div className="w-1/2  flex justify-center items-center text-xl md:hidden">
                    <button 
                         className='flex items-center'
                         onClick={handleShowLoginForm}
@@ -54,10 +57,12 @@ export const LoginScreen = () => {
                    </button>
                 </div>
 
-                <div className="w-1/2 flex justify-center items-center text-xl">
+                <div className="w-1/2 flex justify-end items-center text-xl">
                     <button 
-                        className='flex items-center'>New <IoIosAddCircleOutline className='ml-2' 
-                        onClick={ handleShowRegisterForm }
+                        onClick={ handleNavigateRegisterForm }
+                        className='flex items-center p-2'>New 
+                        <IoIosAddCircleOutline
+                         className='ml-2' 
                         />
                     </button>
                 </div>

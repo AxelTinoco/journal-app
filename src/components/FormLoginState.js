@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import {GoEye,GoEyeClosed} from 'react-icons/go'
 import {FcGoogle} from 'react-icons/fc'
-import {BsGithub} from 'react-icons/bs'
+// import {BsGithub} from 'react-icons/bs'
 import { useForm } from '../hooks/useForm'
 import { useDispatch } from 'react-redux'
 import { startGoogleLogin, startLoginEmailPasword } from '../actions/auth'
@@ -38,7 +38,6 @@ export const FormLoginState = ({showLogin}) => {
     
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(email,password)
         dispatch(startLoginEmailPasword(email,password))
     }
     
@@ -49,8 +48,7 @@ export const FormLoginState = ({showLogin}) => {
 
     }
 
-    console.log(loading)
-   
+ 
 
     return (
 
@@ -117,11 +115,11 @@ export const FormLoginState = ({showLogin}) => {
                    </div>
                 
 
-                or
+                {/* or
 
                 <div className='mx-3 flex'>
                 <BsGithub className='text-3xl cursor-pointer' />
-                </div>
+                </div> */}
 
            </div>
 
